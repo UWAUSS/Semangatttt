@@ -29,7 +29,7 @@ body {
 
 .header_text {
   font-size: clamp(1.8rem, 6vw, 3rem); 
-  color: #d32f2f;
+  color: #d32f2F;
   margin-bottom: 1rem;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -68,4 +68,5 @@ h2 {
     font-size: 1rem;
   }
 }
+
 
