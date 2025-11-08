@@ -1,27 +1,76 @@
+/* ===== RESET & DASAR RESPONSIF ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* cegah teks meluber ke samping */
+  background-color: #f9e3e3;
+  font-family: 'Arial', sans-serif;
+}
+
+/* ===== KONTAINER ===== */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f9e3e3;
-    font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* pakai min-height, bukan height biar bisa scroll kalau teks panjang */
+  text-align: center;
+  padding: 1rem; /* beri jarak sisi kiri-kanan di HP */
 }
 
 .container {
-    text-align: center;
+  max-width: 700px; /* batasi lebar teks agar nyaman dibaca */
+  width: 100%;
 }
 
+/* ===== TEKS UTAMA ===== */
 .header_text {
-    
-    font-size: 3em;
-    color: #d32f2f;
+  font-size: clamp(1.8rem, 6vw, 3rem); /* fleksibel di semua layar */
+  color: #d32f2f;
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.3;
 }
 
+/* ===== TEKS PARAGRAF (h2) ===== */
+h2 {
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
+  line-height: 1.6;
+  color: #333;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin: 0 0 1.5rem 0;
+  padding: 0 0.5rem;
+}
+
+/* ===== GAMBAR GIF ===== */
 .gif_container img {
-    width: 100%; 
-    max-width: 500px; 
-    height: auto; 
-
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
+/* ===== RESPONSIF TAMBAHAN ===== */
+@media (max-width: 480px) {
+  body {
+    padding: 0.75rem;
+  }
+
+  .header_text {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+}
